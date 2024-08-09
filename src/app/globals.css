@@ -10,7 +10,7 @@
 
 :root {
   --main-bg: #1e272e;
-  --main-color: #081218;
+  --main-color: #0097e6;
   --font-color: #fff;
   --placeholder-color: #bfc1c8;
   --secondary-bg: #323544;
@@ -338,4 +338,77 @@ footer p {
 
 .main_content p {
   color: rgb(245, 246, 248); 
+}
+
+.each-slide {
+  position: relative;
+}
+
+.each-slide img {
+  width: 100%;
+  height: auto;
+}
+
+
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-item {
+  margin-left: 10rem;
+}
+
+.footer {
+  background-color: #1e272e;
+  color: #fff;
+  padding: 2rem 0;
+}
+
+.footer h5 {
+  margin-bottom: 1rem;
+  font-size: 20px;
+  color: var(--main-color);
+}
+
+.footer p,
+.footer a {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer .social-icons a {
+  margin-right: 1rem;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.footer .social-icons a:hover {
+  color: var(--main-color);
+}
+
+.footer .text-center {
+  margin-top: 1rem;
+}
+
+.footer .highlight {
+  color: var(--main-color); 
+  font-weight: bold; 
 }

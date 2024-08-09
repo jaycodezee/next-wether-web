@@ -1,11 +1,16 @@
-"use client";
-
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper-bundle.css'; 
+"use client"
 import Image from 'next/image';
+import { Slide } from 'react-slideshow-image';
+import 'react-slideshow-image/dist/styles.css'; 
 import Link from 'next/link';
 
 export default function Home() {
+    const slideImages = [
+        '/images/bg1.png',
+        '/images/bg2.png',
+        '/images/bg3.png'
+    ];
+
     return (
         <>
             <div className="main_header">
@@ -21,52 +26,26 @@ export default function Home() {
                             </Link>
                         </div>
 
-                        <div className="col-md-6 col-12 main_header_right">
-                            <Swiper
-                                spaceBetween={30}
-                                centeredSlides={true}
-                                autoplay={{
-                                    delay: 200,
-                                    disableOnInteraction: false,
-                                }}
-                                pagination={{
-                                    clickable: true,
-                                }}
-                                navigation={true}
-                                className="mySwiper"
+                        {/* <div className="col-md-6 col-12 main_header_right"> */}
+                            {/* <Slide
+                                duration={1000} 
+                                indicators={true}
+                                arrows={true} 
                             >
-                                <SwiperSlide>
-                                    <Image
-                                        className="w-10"
-                                        src="/images/bg1.png"
-                                        alt="First slide"
-                                        layout="responsive"
-                                        width={300}
-                                        height={100}
-                                    />
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <Image
-                                        className="w-100"
-                                        src="/images/bg2.png"
-                                        alt="Second slide"
-                                        layout="responsive"
-                                        width={500}
-                                        height={300}
-                                    />
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <Image
-                                        className="w-100"
-                                        src="/images/bg3.png"
-                                        alt="Third slide"
-                                        layout="responsive"
-                                        width={500}
-                                        height={300}
-                                    />
-                                </SwiperSlide>
-                            </Swiper>
-                        </div>
+                                {slideImages.map((url, index) => (
+                                    <div className="each-slide" key={index}>
+                                        <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+                                            <Image
+                                                src={url}
+                                                alt={`Slide ${index + 1}`}
+                                                layout="fill"
+                                                // objectFit="cover" 
+                                            />
+                                        </div>
+                                    </div>
+                                ))}
+                            </Slide> */}
+                        {/* </div> */}
                     </div>
                 </div>
             </div>

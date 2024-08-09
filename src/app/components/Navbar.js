@@ -1,4 +1,4 @@
-"use client"; 
+"use client";
 
 import Link from "next/link";
 
@@ -7,7 +7,7 @@ const Navbar = () => {
         <div className="container-fluid main_menu">
             <div className="row">
                 <div className="col-md-10 col-12 mx-auto">
-                    <nav className="navbar ">
+                    <nav className="navbar navbar-expand-lg">
                         <Link className="navbar-brand" href="/">
                             <i className="far fa-snowflake"></i> Weather <i className="far fa-snowflake"></i>
                         </Link>
@@ -24,9 +24,9 @@ const Navbar = () => {
                         </button>
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav ml-auto">
-                                <li className="nav-item active">
+                                <li className="nav-item">
                                     <Link className="nav-link" href="/">
-                                        Home <span className="sr-only">(current)</span>
+                                        Home
                                     </Link>
                                 </li>
                                 <li className="nav-item">
