@@ -1,95 +1,75 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper-bundle.css'; 
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    return (
+        <>
+            <div className="main_header">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-6 col-12 main_header_left">
+                            <p>Welcome to weather app</p>
+                            <h1>
+                                Get the latest <span className="txt_clr">weather</span> info of your city
+                            </h1>
+                            <Link href="/weather">
+                                <button>Check now</button>
+                            </Link>
+                        </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+                        <div className="col-md-6 col-12 main_header_right">
+                            <Swiper
+                                spaceBetween={30}
+                                centeredSlides={true}
+                                autoplay={{
+                                    delay: 200,
+                                    disableOnInteraction: false,
+                                }}
+                                pagination={{
+                                    clickable: true,
+                                }}
+                                navigation={true}
+                                className="mySwiper"
+                            >
+                                <SwiperSlide>
+                                    <Image
+                                        className="w-10"
+                                        src="/images/bg1.png"
+                                        alt="First slide"
+                                        layout="responsive"
+                                        width={300}
+                                        height={100}
+                                    />
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <Image
+                                        className="w-100"
+                                        src="/images/bg2.png"
+                                        alt="Second slide"
+                                        layout="responsive"
+                                        width={500}
+                                        height={300}
+                                    />
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <Image
+                                        className="w-100"
+                                        src="/images/bg3.png"
+                                        alt="Third slide"
+                                        layout="responsive"
+                                        width={500}
+                                        height={300}
+                                    />
+                                </SwiperSlide>
+                            </Swiper>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
+    );
 }
