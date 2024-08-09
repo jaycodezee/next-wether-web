@@ -1,4 +1,4 @@
-"use client"; 
+"use client";
 
 import { useState } from "react";
 
@@ -12,11 +12,14 @@ const Weather = () => {
         if (cityVal === "") {
             setError("Please write the name before search");
             setWeatherData(null);
+            return; 
         } else {
             try {
                 const url = `http://api.openweathermap.org/data/2.5/weather?q=${cityVal}&units=metric&appid=a472dd5b5d95ced42ea26f83e263774c`;
                 const response = await fetch(url);
+                // console.log('Response Status:', response.status);
                 const data = await response.json();
+                // console.log('API Data:', data);
 
                 if (data.cod === 200) {
                     setWeatherData({
@@ -30,12 +33,13 @@ const Weather = () => {
                     setError("Please enter the proper city name");
                     setWeatherData(null);
                 }
-            } catch {
-                setError("Please enter the proper city name");
+            } catch (error) {
+                console.error('Fetch Error:', error); 
+                setError("An error occurred. Please try again.");
                 setWeatherData(null);
             }
         }
-        setCityVal("");
+        setCityVal(""); 
     };
 
     const getCurrentDay = () => {
@@ -67,9 +71,11 @@ const Weather = () => {
                 />
                 <br />
                 <input type="submit" value="search" />
-                {error && <p>{error}</p>}
             </form>
 
+            {error && <p className="error-message">{error}</p>}
+            <br/>
+            <br/>
             <div className="tempInformation">
                 <div className="top_layer">
                     <p id="day">{getCurrentDay()}</p>

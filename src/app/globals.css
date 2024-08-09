@@ -412,3 +412,14 @@ footer p {
   color: var(--main-color); 
   font-weight: bold; 
 }
+
+.error-message {
+  color: rgb(22, 21, 21); 
+  font-size: 14px; 
+  margin-top: 10px; 
+  background-color: #108aee;
+  border: 1px solid #1679ca;
+  text-align: center;
+  padding: 10px; 
+  border-radius: 5px; 
+}
